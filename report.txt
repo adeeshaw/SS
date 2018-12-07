@@ -1,0 +1,853 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+
+Begin optimization report for: main(int, char **)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at simpleMPI.cpp(481,2)
+   remark #15382: vectorization support: call to function printf(const char *, ...) cannot be vectorized   [ simpleMPI.cpp(482,3) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(330,13) inlined into simpleMPI.cpp(492,2)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(165,2) inlined into simpleMPI.cpp(492,2)
+   remark #15527: loop was not vectorized: function call to malloc(size_t) cannot be vectorized   [ simpleMPI.cpp(166,23) ]
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(256,2) inlined into simpleMPI.cpp(492,2)
+   remark #15523: loop was not vectorized: loop control variable x was found, but loop iteration count cannot be computed before executing the loop
+
+   LOOP BEGIN at simpleMPI.cpp(260,3) inlined into simpleMPI.cpp(492,2)
+      remark #15527: loop was not vectorized: function call to fscanf(FILE *, const char *, ...) cannot be vectorized   [ simpleMPI.cpp(262,4) ]
+   LOOP END
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(202,2) inlined into simpleMPI.cpp(492,2)
+   remark #15523: loop was not vectorized: loop control variable i was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(212,2) inlined into simpleMPI.cpp(492,2)
+   remark #15527: loop was not vectorized: function call to malloc(size_t) cannot be vectorized   [ simpleMPI.cpp(213,35) ]
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(216,2) inlined into simpleMPI.cpp(492,2)
+   remark #15527: loop was not vectorized: function call to malloc(size_t) cannot be vectorized   [ simpleMPI.cpp(217,35) ]
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(283,2) inlined into simpleMPI.cpp(492,2)
+   remark #15523: loop was not vectorized: loop control variable x was found, but loop iteration count cannot be computed before executing the loop
+
+   LOOP BEGIN at simpleMPI.cpp(287,3) inlined into simpleMPI.cpp(492,2)
+      remark #15523: loop was not vectorized: loop control variable y was found, but loop iteration count cannot be computed before executing the loop
+   LOOP END
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(307,2) inlined into simpleMPI.cpp(492,2)
+   remark #15523: loop was not vectorized: loop control variable x was found, but loop iteration count cannot be computed before executing the loop
+
+   LOOP BEGIN at simpleMPI.cpp(311,3) inlined into simpleMPI.cpp(492,2)
+      remark #15523: loop was not vectorized: loop control variable y was found, but loop iteration count cannot be computed before executing the loop
+   LOOP END
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(497,2)
+   remark #15523: loop was not vectorized: loop control variable x was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(504,2)
+   remark #15523: loop was not vectorized: loop control variable x was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(535,2)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at simpleMPI.cpp(537,3)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed FLOW dependence between totaltilecount line 611 and totaltilecount line 551
+      remark #15346: vector dependence: assumed ANTI dependence between totaltilecount line 551 and totaltilecount line 611
+      remark #15346: vector dependence: assumed FLOW dependence between totaltilecount line 563 and totaltilecount line 551
+      remark #15346: vector dependence: assumed ANTI dependence between totaltilecount line 551 and totaltilecount line 563
+      remark #15346: vector dependence: assumed ANTI dependence between totaltilecount line 551 and totaltilecount line 563
+      remark #15346: vector dependence: assumed FLOW dependence between totaltilecount line 563 and totaltilecount line 551
+      remark #15346: vector dependence: assumed ANTI dependence between totaltilecount line 551 and totaltilecount line 611
+      remark #15346: vector dependence: assumed FLOW dependence between totaltilecount line 611 and totaltilecount line 551
+   LOOP END
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(686,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at simpleMPI.cpp(688,4)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at simpleMPI.cpp(693,6)
+         remark #15389: vectorization support: reference sar_data_multiresarray has unaligned access   [ simpleMPI.cpp(694,16) ]
+         remark #15389: vectorization support: reference sar_data_multiresarray has unaligned access   [ simpleMPI.cpp(695,7) ]
+         remark #15389: vectorization support: reference sar_data_multiresarray has unaligned access   [ simpleMPI.cpp(695,7) ]
+         remark #15389: vectorization support: reference sar_data_multiresarray has unaligned access   [ simpleMPI.cpp(696,7) ]
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 4
+         remark #15309: vectorization support: normalized vectorization overhead 0.632
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15450: unmasked unaligned unit stride loads: 2 
+         remark #15451: unmasked unaligned unit stride stores: 2 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 24 
+         remark #15477: vector loop cost: 4.750 
+         remark #15478: estimated potential speedup: 2.180 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at simpleMPI.cpp(693,6)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(714,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between sar_data_multiresarraytemp line 724 and sar_data_multiresarraytemp line 752
+   remark #15346: vector dependence: assumed OUTPUT dependence between sar_data_multiresarraytemp line 752 and sar_data_multiresarraytemp line 724
+
+   LOOP BEGIN at simpleMPI.cpp(716,4)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between sar_data_multiresarraytemp line 724 and sar_data_multiresarraytemp line 752
+      remark #15346: vector dependence: assumed OUTPUT dependence between sar_data_multiresarraytemp line 752 and sar_data_multiresarraytemp line 724
+   LOOP END
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(770,3)
+<Multiversioned v1>
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15329: vectorization support: scatter was emulated for the variable sar_data_multiresarray:  strided by 5   [ simpleMPI.cpp(771,4) ]
+   remark #15328: vectorization support: gather was emulated for the variable sar_data_multiresarraytemp:  strided by 5   [ simpleMPI.cpp(771,39) ]
+   remark #15329: vectorization support: scatter was emulated for the variable sar_data_multiresarray:  strided by 5   [ simpleMPI.cpp(772,4) ]
+   remark #15328: vectorization support: gather was emulated for the variable sar_data_multiresarraytemp:  strided by 5   [ simpleMPI.cpp(772,39) ]
+   remark #15329: vectorization support: scatter was emulated for the variable sar_data_multiresarray:  strided by 5   [ simpleMPI.cpp(773,4) ]
+   remark #15328: vectorization support: gather was emulated for the variable sar_data_multiresarraytemp:  strided by 5   [ simpleMPI.cpp(773,39) ]
+   remark #15305: vectorization support: vector length 4
+   remark #15460: masked strided loads: 3 
+   remark #15462: unmasked indexed (or gather) loads: 3 
+   remark #15475: --- begin vector loop cost summary ---
+   remark #15476: scalar loop cost: 31 
+   remark #15477: vector loop cost: 50.250 
+   remark #15478: estimated potential speedup: 0.610 
+   remark #15488: --- end vector loop cost summary ---
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(770,3)
+<Remainder, Multiversioned v1>
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(770,3)
+<Multiversioned v2>
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15329: vectorization support: scatter was emulated for the variable sar_data_multiresarray:  strided by 5   [ simpleMPI.cpp(771,4) ]
+   remark #15328: vectorization support: gather was emulated for the variable sar_data_multiresarraytemp:  strided by 5   [ simpleMPI.cpp(771,39) ]
+   remark #15329: vectorization support: scatter was emulated for the variable sar_data_multiresarray:  strided by 5   [ simpleMPI.cpp(772,4) ]
+   remark #15328: vectorization support: gather was emulated for the variable sar_data_multiresarraytemp:  strided by 5   [ simpleMPI.cpp(772,39) ]
+   remark #15329: vectorization support: scatter was emulated for the variable sar_data_multiresarray:  strided by 5   [ simpleMPI.cpp(773,4) ]
+   remark #15328: vectorization support: gather was emulated for the variable sar_data_multiresarraytemp:  strided by 5   [ simpleMPI.cpp(773,39) ]
+   remark #15305: vectorization support: vector length 4
+   remark #15460: masked strided loads: 3 
+   remark #15462: unmasked indexed (or gather) loads: 3 
+   remark #15475: --- begin vector loop cost summary ---
+   remark #15476: scalar loop cost: 31 
+   remark #15477: vector loop cost: 50.250 
+   remark #15478: estimated potential speedup: 0.610 
+   remark #15488: --- end vector loop cost summary ---
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(770,3)
+<Remainder, Multiversioned v2>
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(780,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at simpleMPI.cpp(786,4)
+      remark #15328: vectorization support: gather was emulated for the variable sar_data_multiresarray:  strided by 5   [ simpleMPI.cpp(789,9) ]
+      remark #15328: vectorization support: gather was emulated for the variable sar_data_multiresarray:  strided by 5   [ simpleMPI.cpp(794,9) ]
+      remark #15328: vectorization support: gather was emulated for the variable sar_data_multiresarray:  strided by 5   [ simpleMPI.cpp(799,9) ]
+      remark #15305: vectorization support: vector length 4
+      remark #15309: vectorization support: normalized vectorization overhead 0.738
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15460: masked strided loads: 3 
+      remark #15475: --- begin vector loop cost summary ---
+      remark #15476: scalar loop cost: 73 
+      remark #15477: vector loop cost: 31.500 
+      remark #15478: estimated potential speedup: 2.290 
+      remark #15488: --- end vector loop cost summary ---
+   LOOP END
+
+   LOOP BEGIN at simpleMPI.cpp(786,4)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(822,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between fitcalculationarray line 829 and fitcalculationarray line 844
+   remark #15346: vector dependence: assumed OUTPUT dependence between fitcalculationarray line 844 and fitcalculationarray line 829
+
+   LOOP BEGIN at simpleMPI.cpp(824,4)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between fitcalculationarray line 829 and fitcalculationarray line 844
+      remark #15346: vector dependence: assumed OUTPUT dependence between fitcalculationarray line 844 and fitcalculationarray line 829
+   LOOP END
+
+   LOOP BEGIN at simpleMPI.cpp(824,4)
+   <Remainder>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(874,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between fitcalculationarray line 880 and fitcalculationarray line 895
+   remark #15346: vector dependence: assumed OUTPUT dependence between fitcalculationarray line 895 and fitcalculationarray line 880
+
+   LOOP BEGIN at simpleMPI.cpp(876,4)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between fitcalculationarray line 880 and fitcalculationarray line 895
+      remark #15346: vector dependence: assumed OUTPUT dependence between fitcalculationarray line 895 and fitcalculationarray line 880
+   LOOP END
+
+   LOOP BEGIN at simpleMPI.cpp(876,4)
+   <Remainder>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(927,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between fitcalculationarray line 933 and fitcalculationarray line 948
+   remark #15346: vector dependence: assumed OUTPUT dependence between fitcalculationarray line 948 and fitcalculationarray line 933
+
+   LOOP BEGIN at simpleMPI.cpp(929,4)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between fitcalculationarray line 933 and fitcalculationarray line 948
+      remark #15346: vector dependence: assumed OUTPUT dependence between fitcalculationarray line 948 and fitcalculationarray line 933
+   LOOP END
+
+   LOOP BEGIN at simpleMPI.cpp(929,4)
+   <Remainder>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(1040,2)
+   remark #15382: vectorization support: call to function printf(const char *, ...) cannot be vectorized   [ simpleMPI.cpp(1047,3) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(1040,2)
+   remark #15382: vectorization support: call to function printf(const char *, ...) cannot be vectorized   [ simpleMPI.cpp(1047,3) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(1051,2)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed FLOW dependence between omp_fitcalculationarray line 1055 and omp_fitcalculationarray line 1075
+   remark #15346: vector dependence: assumed ANTI dependence between omp_fitcalculationarray line 1075 and omp_fitcalculationarray line 1055
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(1082,2)
+   remark #15382: vectorization support: call to function printf(const char *, ...) cannot be vectorized   [ simpleMPI.cpp(1083,3) ]
+   remark #15382: vectorization support: call to function printf(const char *, ...) cannot be vectorized   [ simpleMPI.cpp(1085,3) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(1096,2)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between omp_tempoffsetsizes line 1098 and omp_tempoffsetsizes line 1098
+   remark #15346: vector dependence: assumed FLOW dependence between omp_tempoffsetsizes line 1098 and omp_tempoffsetsizes line 1098
+   remark #15346: vector dependence: assumed FLOW dependence between omp_tempoffsetsizes line 1098 and omp_tempoffsetsizes line 1098
+   remark #15346: vector dependence: assumed ANTI dependence between omp_tempoffsetsizes line 1098 and omp_tempoffsetsizes line 1098
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(1096,2)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(1373,2) inlined into simpleMPI.cpp(1137,4)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at simpleMPI.cpp(1407,5) inlined into simpleMPI.cpp(1137,4)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at simpleMPI.cpp(1414,6) inlined into simpleMPI.cpp(1137,4)
+         remark #15388: vectorization support: reference final_imvalueR has aligned access   [ simpleMPI.cpp(1463,7) ]
+         remark #15388: vectorization support: reference final_imvalueR has aligned access   [ simpleMPI.cpp(1463,7) ]
+         remark #15388: vectorization support: reference final_imvalueQ has aligned access   [ simpleMPI.cpp(1464,7) ]
+         remark #15388: vectorization support: reference final_imvalueQ has aligned access   [ simpleMPI.cpp(1464,7) ]
+         remark #15388: vectorization support: reference final_imvalueR has aligned access   [ simpleMPI.cpp(1463,7) ]
+         remark #15388: vectorization support: reference final_imvalueR has aligned access   [ simpleMPI.cpp(1463,7) ]
+         remark #15388: vectorization support: reference final_imvalueQ has aligned access   [ simpleMPI.cpp(1464,7) ]
+         remark #15388: vectorization support: reference final_imvalueQ has aligned access   [ simpleMPI.cpp(1464,7) ]
+         remark #15328: vectorization support: gather was emulated for the variable sar_data_finalIfft_RQ_6998:  indirect access    [ simpleMPI.cpp(1444,15) ]
+         remark #15328: vectorization support: gather was emulated for the variable sar_data_finalIfft_RQ_6998:  indirect access    [ simpleMPI.cpp(1445,15) ]
+         remark #15328: vectorization support: gather was emulated for the variable sar_data_finalIfft_RQ_6998:  indirect access    [ simpleMPI.cpp(1447,19) ]
+         remark #15328: vectorization support: gather was emulated for the variable sar_data_finalIfft_RQ_6998:  indirect access    [ simpleMPI.cpp(1448,20) ]
+         remark #15328: vectorization support: gather was emulated for the variable sar_data_finalIfft_RQ_6998:  indirect access    [ simpleMPI.cpp(1444,15) ]
+         remark #15328: vectorization support: gather was emulated for the variable sar_data_finalIfft_RQ_6998:  indirect access    [ simpleMPI.cpp(1445,15) ]
+         remark #15328: vectorization support: gather was emulated for the variable sar_data_finalIfft_RQ_6998:  indirect access    [ simpleMPI.cpp(1447,19) ]
+         remark #15328: vectorization support: gather was emulated for the variable sar_data_finalIfft_RQ_6998:  indirect access    [ simpleMPI.cpp(1448,20) ]
+         remark #15305: vectorization support: vector length 4
+         remark #15309: vectorization support: normalized vectorization overhead 0.132
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15448: unmasked aligned unit stride loads: 3 
+         remark #15449: unmasked aligned unit stride stores: 4 
+         remark #15458: masked indexed (or gather) loads: 8 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 839 
+         remark #15477: vector loop cost: 269.000 
+         remark #15478: estimated potential speedup: 3.110 
+         remark #15482: vectorized math library calls: 2 
+         remark #15487: type converts: 6 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at simpleMPI.cpp(1407,5) inlined into simpleMPI.cpp(1137,4)
+   <Remainder>
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at simpleMPI.cpp(1414,6) inlined into simpleMPI.cpp(1137,4)
+         remark #15388: vectorization support: reference final_imvalueR has aligned access   [ simpleMPI.cpp(1463,7) ]
+         remark #15388: vectorization support: reference final_imvalueR has aligned access   [ simpleMPI.cpp(1463,7) ]
+         remark #15388: vectorization support: reference final_imvalueQ has aligned access   [ simpleMPI.cpp(1464,7) ]
+         remark #15388: vectorization support: reference final_imvalueQ has aligned access   [ simpleMPI.cpp(1464,7) ]
+         remark #15328: vectorization support: gather was emulated for the variable sar_data_finalIfft_RQ_6998:  indirect access    [ simpleMPI.cpp(1444,15) ]
+         remark #15328: vectorization support: gather was emulated for the variable sar_data_finalIfft_RQ_6998:  indirect access    [ simpleMPI.cpp(1445,15) ]
+         remark #15328: vectorization support: gather was emulated for the variable sar_data_finalIfft_RQ_6998:  indirect access    [ simpleMPI.cpp(1447,19) ]
+         remark #15328: vectorization support: gather was emulated for the variable sar_data_finalIfft_RQ_6998:  indirect access    [ simpleMPI.cpp(1448,20) ]
+         remark #15305: vectorization support: vector length 4
+         remark #15309: vectorization support: normalized vectorization overhead 0.151
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15448: unmasked aligned unit stride loads: 2 
+         remark #15449: unmasked aligned unit stride stores: 2 
+         remark #15458: masked indexed (or gather) loads: 4 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 419 
+         remark #15477: vector loop cost: 120.750 
+         remark #15478: estimated potential speedup: 3.460 
+         remark #15482: vectorized math library calls: 1 
+         remark #15487: type converts: 3 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at simpleMPI.cpp(1468,5) inlined into simpleMPI.cpp(1137,4)
+   <Peeled loop for vectorization>
+   LOOP END
+
+   LOOP BEGIN at simpleMPI.cpp(1468,5) inlined into simpleMPI.cpp(1137,4)
+      remark #15388: vectorization support: reference im_final_host_Q_6998 has aligned access   [ simpleMPI.cpp(1470,6) ]
+      remark #15388: vectorization support: reference im_final_host_Q_6998 has aligned access   [ simpleMPI.cpp(1470,6) ]
+      remark #15388: vectorization support: reference final_imvalueR has aligned access   [ simpleMPI.cpp(1470,6) ]
+      remark #15388: vectorization support: reference im_final_host_Q_6998 has aligned access   [ simpleMPI.cpp(1472,6) ]
+      remark #15388: vectorization support: reference im_final_host_Q_6998 has aligned access   [ simpleMPI.cpp(1472,6) ]
+      remark #15388: vectorization support: reference final_imvalueQ has aligned access   [ simpleMPI.cpp(1472,6) ]
+      remark #15305: vectorization support: vector length 4
+      remark #15399: vectorization support: unroll factor set to 2
+      remark #15309: vectorization support: normalized vectorization overhead 0.700
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15448: unmasked aligned unit stride loads: 3 
+      remark #15449: unmasked aligned unit stride stores: 2 
+      remark #15475: --- begin vector loop cost summary ---
+      remark #15476: scalar loop cost: 22 
+      remark #15477: vector loop cost: 2.500 
+      remark #15478: estimated potential speedup: 6.950 
+      remark #15488: --- end vector loop cost summary ---
+   LOOP END
+
+   LOOP BEGIN at simpleMPI.cpp(1468,5) inlined into simpleMPI.cpp(1137,4)
+   <Alternate Alignment Vectorized Loop>
+   LOOP END
+
+   LOOP BEGIN at simpleMPI.cpp(1468,5) inlined into simpleMPI.cpp(1137,4)
+   <Remainder loop for vectorization>
+      remark #15388: vectorization support: reference im_final_host_Q_6998 has aligned access   [ simpleMPI.cpp(1470,6) ]
+      remark #15388: vectorization support: reference im_final_host_Q_6998 has aligned access   [ simpleMPI.cpp(1470,6) ]
+      remark #15389: vectorization support: reference final_imvalueR has unaligned access   [ simpleMPI.cpp(1470,6) ]
+      remark #15388: vectorization support: reference im_final_host_Q_6998 has aligned access   [ simpleMPI.cpp(1472,6) ]
+      remark #15388: vectorization support: reference im_final_host_Q_6998 has aligned access   [ simpleMPI.cpp(1472,6) ]
+      remark #15389: vectorization support: reference final_imvalueQ has unaligned access   [ simpleMPI.cpp(1472,6) ]
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15305: vectorization support: vector length 4
+      remark #15309: vectorization support: normalized vectorization overhead 0.667
+      remark #15301: REMAINDER LOOP WAS VECTORIZED
+   LOOP END
+
+   LOOP BEGIN at simpleMPI.cpp(1468,5) inlined into simpleMPI.cpp(1137,4)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(1201,3)
+   remark #15527: loop was not vectorized: function call to malloc(size_t) cannot be vectorized   [ simpleMPI.cpp(1202,38) ]
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(1217,4)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at simpleMPI.cpp(1214,3)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at simpleMPI.cpp(1219,6)
+         remark #15542: loop was not vectorized: inner loop was already vectorized
+
+         LOOP BEGIN at simpleMPI.cpp(1218,5)
+            remark #15389: vectorization support: reference (unknown) has unaligned access   [ simpleMPI.cpp(1223,9) ]
+            remark #15381: vectorization support: unaligned access used inside loop body
+            remark #15305: vectorization support: vector length 2
+            remark #15427: loop was completely unrolled
+            remark #15399: vectorization support: unroll factor set to 8
+            remark #15309: vectorization support: normalized vectorization overhead 0.016
+            remark #15417: vectorization support: number of FP up converts: single precision to double precision 1   [ simpleMPI.cpp(1224,11) ]
+            remark #15417: vectorization support: number of FP up converts: single precision to double precision 1   [ simpleMPI.cpp(1225,13) ]
+            remark #15418: vectorization support: number of FP down converts: double precision to single precision 1   [ simpleMPI.cpp(1223,9) ]
+            remark #15301: PERMUTED LOOP WAS VECTORIZED
+            remark #15460: masked strided loads: 2 
+            remark #15475: --- begin vector loop cost summary ---
+            remark #15476: scalar loop cost: 82 
+            remark #15477: vector loop cost: 28.000 
+            remark #15478: estimated potential speedup: 2.880 
+            remark #15487: type converts: 3 
+            remark #15488: --- end vector loop cost summary ---
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(1241,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at simpleMPI.cpp(1244,4)
+   <Peeled loop for vectorization>
+   LOOP END
+
+   LOOP BEGIN at simpleMPI.cpp(1244,4)
+      remark #15388: vectorization support: reference (unknown) has aligned access   [ simpleMPI.cpp(1246,5) ]
+      remark #15305: vectorization support: vector length 4
+      remark #15399: vectorization support: unroll factor set to 2
+      remark #15309: vectorization support: normalized vectorization overhead 4.800
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15448: unmasked aligned unit stride loads: 1 
+      remark #15475: --- begin vector loop cost summary ---
+      remark #15476: scalar loop cost: 12 
+      remark #15477: vector loop cost: 1.250 
+      remark #15478: estimated potential speedup: 7.720 
+      remark #15488: --- end vector loop cost summary ---
+   LOOP END
+
+   LOOP BEGIN at simpleMPI.cpp(1244,4)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(1257,3)
+   remark #15527: loop was not vectorized: function call to malloc(size_t) cannot be vectorized   [ simpleMPI.cpp(1258,34) ]
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(1261,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at simpleMPI.cpp(1263,4)
+   <Peeled loop for vectorization>
+   LOOP END
+
+   LOOP BEGIN at simpleMPI.cpp(1263,4)
+      remark #15389: vectorization support: reference (unknown) has unaligned access   [ simpleMPI.cpp(1265,8) ]
+      remark #15389: vectorization support: reference (unknown) has unaligned access   [ simpleMPI.cpp(1264,5) ]
+      remark #15389: vectorization support: reference (unknown) has unaligned access   [ simpleMPI.cpp(1279,6) ]
+      remark #15389: vectorization support: reference (unknown) has unaligned access   [ simpleMPI.cpp(1281,6) ]
+      remark #15388: vectorization support: reference (unknown) has aligned access   [ simpleMPI.cpp(1283,6) ]
+      remark #15389: vectorization support: reference (unknown) has unaligned access   [ simpleMPI.cpp(1283,6) ]
+      remark #15389: vectorization support: reference (unknown) has unaligned access   [ simpleMPI.cpp(1279,6) ]
+      remark #15389: vectorization support: reference (unknown) has unaligned access   [ simpleMPI.cpp(1281,6) ]
+      remark #15389: vectorization support: reference (unknown) has unaligned access   [ simpleMPI.cpp(1283,6) ]
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15305: vectorization support: vector length 4
+      remark #15309: vectorization support: normalized vectorization overhead 0.180
+      remark #15417: vectorization support: number of FP up converts: single precision to double precision 1   [ simpleMPI.cpp(1265,8) ]
+      remark #15418: vectorization support: number of FP down converts: double precision to single precision 1   [ simpleMPI.cpp(1264,5) ]
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15450: unmasked unaligned unit stride loads: 7 
+      remark #15451: unmasked unaligned unit stride stores: 3 
+      remark #15475: --- begin vector loop cost summary ---
+      remark #15476: scalar loop cost: 199 
+      remark #15477: vector loop cost: 69.500 
+      remark #15478: estimated potential speedup: 2.780 
+      remark #15482: vectorized math library calls: 1 
+      remark #15487: type converts: 2 
+      remark #15488: --- end vector loop cost summary ---
+   LOOP END
+
+   LOOP BEGIN at simpleMPI.cpp(1275,4)
+   LOOP END
+
+   LOOP BEGIN at simpleMPI.cpp(1263,4)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(1273,3)
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(1302,3)
+   remark #15382: vectorization support: call to function fprintf(FILE *, const char *, ...) cannot be vectorized   [ simpleMPI.cpp(1305,5) ]
+   remark #15382: vectorization support: call to function fprintf(FILE *, const char *, ...) cannot be vectorized   [ simpleMPI.cpp(1308,4) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:fprintf(FILE *, const char  line 1305 and call:fprintf(FILE *, const char  line 1308
+   remark #15346: vector dependence: assumed OUTPUT dependence between  line 1308 and  line 1305
+
+   LOOP BEGIN at simpleMPI.cpp(1304,4)
+      remark #15527: loop was not vectorized: function call to fprintf(FILE *, const char *, ...) cannot be vectorized   [ simpleMPI.cpp(1305,5) ]
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: max_array(float *, int)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at simpleMPI.cpp(99,2)
+<Peeled loop for vectorization>
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(99,2)
+   remark #15388: vectorization support: reference a has aligned access   [ simpleMPI.cpp(100,3) ]
+   remark #15305: vectorization support: vector length 4
+   remark #15399: vectorization support: unroll factor set to 2
+   remark #15309: vectorization support: normalized vectorization overhead 4.100
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15442: entire loop may be executed in remainder
+   remark #15448: unmasked aligned unit stride loads: 1 
+   remark #15475: --- begin vector loop cost summary ---
+   remark #15476: scalar loop cost: 9 
+   remark #15477: vector loop cost: 1.250 
+   remark #15478: estimated potential speedup: 6.040 
+   remark #15488: --- end vector loop cost summary ---
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(99,2)
+<Remainder loop for vectorization>
+LOOP END
+===========================================================================
+
+Begin optimization report for: min_array(float *, int)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at simpleMPI.cpp(111,2)
+<Peeled loop for vectorization>
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(111,2)
+   remark #15388: vectorization support: reference a has aligned access   [ simpleMPI.cpp(112,3) ]
+   remark #15305: vectorization support: vector length 4
+   remark #15399: vectorization support: unroll factor set to 2
+   remark #15309: vectorization support: normalized vectorization overhead 4.100
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15442: entire loop may be executed in remainder
+   remark #15448: unmasked aligned unit stride loads: 1 
+   remark #15475: --- begin vector loop cost summary ---
+   remark #15476: scalar loop cost: 9 
+   remark #15477: vector loop cost: 1.250 
+   remark #15478: estimated potential speedup: 6.040 
+   remark #15488: --- end vector loop cost summary ---
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(111,2)
+<Remainder loop for vectorization>
+LOOP END
+===========================================================================
+
+Begin optimization report for: mean(float *, int)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at simpleMPI.cpp(124,2)
+<Peeled loop for vectorization>
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(124,2)
+   remark #15388: vectorization support: reference a has aligned access   [ simpleMPI.cpp(125,3) ]
+   remark #15305: vectorization support: vector length 4
+   remark #15399: vectorization support: unroll factor set to 8
+   remark #15309: vectorization support: normalized vectorization overhead 1.025
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15442: entire loop may be executed in remainder
+   remark #15448: unmasked aligned unit stride loads: 1 
+   remark #15475: --- begin vector loop cost summary ---
+   remark #15476: scalar loop cost: 6 
+   remark #15477: vector loop cost: 1.250 
+   remark #15478: estimated potential speedup: 3.800 
+   remark #15488: --- end vector loop cost summary ---
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(124,2)
+<Remainder loop for vectorization>
+   remark #15388: vectorization support: reference a has aligned access   [ simpleMPI.cpp(125,3) ]
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 5.857
+   remark #15301: REMAINDER LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(124,2)
+<Remainder loop for vectorization>
+LOOP END
+===========================================================================
+
+Begin optimization report for: makeSarImage(float *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at simpleMPI.cpp(330,13) inlined into simpleMPI.cpp(162,2)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(165,2)
+   remark #15527: loop was not vectorized: function call to malloc(size_t) cannot be vectorized   [ simpleMPI.cpp(166,23) ]
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(256,2) inlined into simpleMPI.cpp(175,2)
+   remark #15523: loop was not vectorized: loop control variable x was found, but loop iteration count cannot be computed before executing the loop
+
+   LOOP BEGIN at simpleMPI.cpp(260,3) inlined into simpleMPI.cpp(175,2)
+      remark #15527: loop was not vectorized: function call to fscanf(FILE *, const char *, ...) cannot be vectorized   [ simpleMPI.cpp(262,4) ]
+   LOOP END
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(202,2)
+   remark #15389: vectorization support: reference (unknown) has unaligned access   [ simpleMPI.cpp(203,3) ]
+   remark #15389: vectorization support: reference (unknown) has unaligned access   [ simpleMPI.cpp(204,3) ]
+   remark #15389: vectorization support: reference (unknown) has unaligned access   [ simpleMPI.cpp(205,3) ]
+   remark #15389: vectorization support: reference (unknown) has unaligned access   [ simpleMPI.cpp(206,3) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15328: vectorization support: gather was emulated for the variable (unknown):  indirect access, 64bit indexed   [ simpleMPI.cpp(203,26) ]
+   remark #15328: vectorization support: gather was emulated for the variable (unknown):  indirect access, 64bit indexed   [ simpleMPI.cpp(204,26) ]
+   remark #15328: vectorization support: gather was emulated for the variable (unknown):  indirect access, 64bit indexed   [ simpleMPI.cpp(205,26) ]
+   remark #15328: vectorization support: gather was emulated for the variable (unknown):  indirect access, 64bit indexed   [ simpleMPI.cpp(206,25) ]
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 0.161
+   remark #15450: unmasked unaligned unit stride loads: 4 
+   remark #15458: masked indexed (or gather) loads: 4 
+   remark #15462: unmasked indexed (or gather) loads: 4 
+   remark #15475: --- begin vector loop cost summary ---
+   remark #15476: scalar loop cost: 39 
+   remark #15477: vector loop cost: 62.000 
+   remark #15478: estimated potential speedup: 0.620 
+   remark #15488: --- end vector loop cost summary ---
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(212,2)
+   remark #15527: loop was not vectorized: function call to malloc(size_t) cannot be vectorized   [ simpleMPI.cpp(213,35) ]
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(216,2)
+   remark #15527: loop was not vectorized: function call to malloc(size_t) cannot be vectorized   [ simpleMPI.cpp(217,35) ]
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(283,2) inlined into simpleMPI.cpp(219,2)
+   remark #15523: loop was not vectorized: loop control variable x was found, but loop iteration count cannot be computed before executing the loop
+
+   LOOP BEGIN at simpleMPI.cpp(287,3) inlined into simpleMPI.cpp(219,2)
+      remark #15523: loop was not vectorized: loop control variable y was found, but loop iteration count cannot be computed before executing the loop
+   LOOP END
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(307,2) inlined into simpleMPI.cpp(219,2)
+   remark #15523: loop was not vectorized: loop control variable x was found, but loop iteration count cannot be computed before executing the loop
+
+   LOOP BEGIN at simpleMPI.cpp(311,3) inlined into simpleMPI.cpp(219,2)
+      remark #15523: loop was not vectorized: loop control variable y was found, but loop iteration count cannot be computed before executing the loop
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: readPostDCPHPaux(float **)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at simpleMPI.cpp(256,2)
+   remark #15523: loop was not vectorized: loop control variable x was found, but loop iteration count cannot be computed before executing the loop
+
+   LOOP BEGIN at simpleMPI.cpp(260,3)
+      remark #15382: vectorization support: call to function fscanf(FILE *, const char *, ...) cannot be vectorized   [ simpleMPI.cpp(262,4) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed FLOW dependence between call:fscanf(FILE *, const char * line 262 and paux line 262
+      remark #15346: vector dependence: assumed ANTI dependence between paux line 262 and call:fscanf(FILE *, const char * line 262
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: readPostDCPH(float **, float **)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at simpleMPI.cpp(283,2)
+   remark #15523: loop was not vectorized: loop control variable x was found, but loop iteration count cannot be computed before executing the loop
+
+   LOOP BEGIN at simpleMPI.cpp(287,3)
+      remark #15523: loop was not vectorized: loop control variable y was found, but loop iteration count cannot be computed before executing the loop
+   LOOP END
+LOOP END
+
+LOOP BEGIN at simpleMPI.cpp(307,2)
+   remark #15523: loop was not vectorized: loop control variable x was found, but loop iteration count cannot be computed before executing the loop
+
+   LOOP BEGIN at simpleMPI.cpp(311,3)
+      remark #15523: loop was not vectorized: loop control variable y was found, but loop iteration count cannot be computed before executing the loop
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: load_input_frame_header()
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at simpleMPI.cpp(330,13)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form
+LOOP END
+===========================================================================
+
+Begin optimization report for: bpbasiccpu(int, int, int, int, int, int, int, int, float, float *, float *, int, int, int *, int, int, int, int, int, float, float, float, float *, float *, int, int)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at simpleMPI.cpp(1373,2)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at simpleMPI.cpp(1407,5)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at simpleMPI.cpp(1414,6)
+         remark #15388: vectorization support: reference final_imvalueR has aligned access   [ simpleMPI.cpp(1463,7) ]
+         remark #15388: vectorization support: reference final_imvalueR has aligned access   [ simpleMPI.cpp(1463,7) ]
+         remark #15388: vectorization support: reference final_imvalueQ has aligned access   [ simpleMPI.cpp(1464,7) ]
+         remark #15388: vectorization support: reference final_imvalueQ has aligned access   [ simpleMPI.cpp(1464,7) ]
+         remark #15388: vectorization support: reference final_imvalueR has aligned access   [ simpleMPI.cpp(1463,7) ]
+         remark #15388: vectorization support: reference final_imvalueR has aligned access   [ simpleMPI.cpp(1463,7) ]
+         remark #15388: vectorization support: reference final_imvalueQ has aligned access   [ simpleMPI.cpp(1464,7) ]
+         remark #15388: vectorization support: reference final_imvalueQ has aligned access   [ simpleMPI.cpp(1464,7) ]
+         remark #15328: vectorization support: gather was emulated for the variable sar_data_finalIfft_RQ:  indirect access    [ simpleMPI.cpp(1444,15) ]
+         remark #15328: vectorization support: gather was emulated for the variable sar_data_finalIfft_RQ:  indirect access    [ simpleMPI.cpp(1445,15) ]
+         remark #15328: vectorization support: gather was emulated for the variable sar_data_finalIfft_RQ:  indirect access    [ simpleMPI.cpp(1447,19) ]
+         remark #15328: vectorization support: gather was emulated for the variable sar_data_finalIfft_RQ:  indirect access    [ simpleMPI.cpp(1448,20) ]
+         remark #15328: vectorization support: gather was emulated for the variable sar_data_finalIfft_RQ:  indirect access    [ simpleMPI.cpp(1444,15) ]
+         remark #15328: vectorization support: gather was emulated for the variable sar_data_finalIfft_RQ:  indirect access    [ simpleMPI.cpp(1445,15) ]
+         remark #15328: vectorization support: gather was emulated for the variable sar_data_finalIfft_RQ:  indirect access    [ simpleMPI.cpp(1447,19) ]
+         remark #15328: vectorization support: gather was emulated for the variable sar_data_finalIfft_RQ:  indirect access    [ simpleMPI.cpp(1448,20) ]
+         remark #15305: vectorization support: vector length 4
+         remark #15309: vectorization support: normalized vectorization overhead 0.132
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15448: unmasked aligned unit stride loads: 3 
+         remark #15449: unmasked aligned unit stride stores: 4 
+         remark #15458: masked indexed (or gather) loads: 8 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 839 
+         remark #15477: vector loop cost: 269.000 
+         remark #15478: estimated potential speedup: 3.110 
+         remark #15482: vectorized math library calls: 2 
+         remark #15487: type converts: 6 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at simpleMPI.cpp(1407,5)
+   <Remainder>
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at simpleMPI.cpp(1414,6)
+         remark #15388: vectorization support: reference final_imvalueR has aligned access   [ simpleMPI.cpp(1463,7) ]
+         remark #15388: vectorization support: reference final_imvalueR has aligned access   [ simpleMPI.cpp(1463,7) ]
+         remark #15388: vectorization support: reference final_imvalueQ has aligned access   [ simpleMPI.cpp(1464,7) ]
+         remark #15388: vectorization support: reference final_imvalueQ has aligned access   [ simpleMPI.cpp(1464,7) ]
+         remark #15328: vectorization support: gather was emulated for the variable sar_data_finalIfft_RQ:  indirect access    [ simpleMPI.cpp(1444,15) ]
+         remark #15328: vectorization support: gather was emulated for the variable sar_data_finalIfft_RQ:  indirect access    [ simpleMPI.cpp(1445,15) ]
+         remark #15328: vectorization support: gather was emulated for the variable sar_data_finalIfft_RQ:  indirect access    [ simpleMPI.cpp(1447,19) ]
+         remark #15328: vectorization support: gather was emulated for the variable sar_data_finalIfft_RQ:  indirect access    [ simpleMPI.cpp(1448,20) ]
+         remark #15305: vectorization support: vector length 4
+         remark #15309: vectorization support: normalized vectorization overhead 0.151
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15448: unmasked aligned unit stride loads: 2 
+         remark #15449: unmasked aligned unit stride stores: 2 
+         remark #15458: masked indexed (or gather) loads: 4 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 419 
+         remark #15477: vector loop cost: 120.750 
+         remark #15478: estimated potential speedup: 3.460 
+         remark #15482: vectorized math library calls: 1 
+         remark #15487: type converts: 3 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at simpleMPI.cpp(1468,5)
+   <Peeled loop for vectorization>
+   LOOP END
+
+   LOOP BEGIN at simpleMPI.cpp(1468,5)
+      remark #15388: vectorization support: reference im_final_host_Q has aligned access   [ simpleMPI.cpp(1470,6) ]
+      remark #15388: vectorization support: reference im_final_host_Q has aligned access   [ simpleMPI.cpp(1470,6) ]
+      remark #15388: vectorization support: reference final_imvalueR has aligned access   [ simpleMPI.cpp(1470,6) ]
+      remark #15388: vectorization support: reference im_final_host_Q has aligned access   [ simpleMPI.cpp(1472,6) ]
+      remark #15388: vectorization support: reference im_final_host_Q has aligned access   [ simpleMPI.cpp(1472,6) ]
+      remark #15388: vectorization support: reference final_imvalueQ has aligned access   [ simpleMPI.cpp(1472,6) ]
+      remark #15305: vectorization support: vector length 4
+      remark #15399: vectorization support: unroll factor set to 2
+      remark #15309: vectorization support: normalized vectorization overhead 0.700
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15448: unmasked aligned unit stride loads: 3 
+      remark #15449: unmasked aligned unit stride stores: 2 
+      remark #15475: --- begin vector loop cost summary ---
+      remark #15476: scalar loop cost: 22 
+      remark #15477: vector loop cost: 2.500 
+      remark #15478: estimated potential speedup: 6.950 
+      remark #15488: --- end vector loop cost summary ---
+   LOOP END
+
+   LOOP BEGIN at simpleMPI.cpp(1468,5)
+   <Alternate Alignment Vectorized Loop>
+   LOOP END
+
+   LOOP BEGIN at simpleMPI.cpp(1468,5)
+   <Remainder loop for vectorization>
+      remark #15388: vectorization support: reference im_final_host_Q has aligned access   [ simpleMPI.cpp(1470,6) ]
+      remark #15388: vectorization support: reference im_final_host_Q has aligned access   [ simpleMPI.cpp(1470,6) ]
+      remark #15389: vectorization support: reference final_imvalueR has unaligned access   [ simpleMPI.cpp(1470,6) ]
+      remark #15388: vectorization support: reference im_final_host_Q has aligned access   [ simpleMPI.cpp(1472,6) ]
+      remark #15388: vectorization support: reference im_final_host_Q has aligned access   [ simpleMPI.cpp(1472,6) ]
+      remark #15389: vectorization support: reference final_imvalueQ has unaligned access   [ simpleMPI.cpp(1472,6) ]
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15305: vectorization support: vector length 4
+      remark #15309: vectorization support: normalized vectorization overhead 0.667
+      remark #15301: REMAINDER LOOP WAS VECTORIZED
+   LOOP END
+
+   LOOP BEGIN at simpleMPI.cpp(1468,5)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+===========================================================================
